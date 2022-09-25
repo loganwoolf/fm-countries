@@ -1,16 +1,14 @@
-import { useState } from "react";
 import "./header.css";
 import { StyleSwitch } from "./styleSwitch";
 
-export const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const swapMode = () => {
-    setDarkMode((prev) => !prev);
-  };
+export const Header = (props) => {
   return (
-    <header className={`header ${darkMode && "dark"}`}>
+    <header className="header">
       <h1>Where In The World?</h1>
-      <StyleSwitch onClick={swapMode} darkMode={darkMode} />
+      <StyleSwitch
+        darkMode={props.darkTheme}
+        setDarkTheme={props.setDarkTheme}
+      />
     </header>
   );
 };
