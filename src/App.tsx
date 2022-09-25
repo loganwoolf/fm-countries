@@ -14,7 +14,7 @@ export const App = () => {
       .then((res) => {
         return res.json();
       })
-      .then((json) => console.log(json[0]) || setCountries(json))
+      .then((json) => setCountries(json))
       .catch((err) => console.log("Error:", err));
   }, []);
 
